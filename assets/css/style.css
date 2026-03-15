@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.card {
+    border: none;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-content .card:hover,
+.modal-open .card:hover,
+.modal .card:hover {
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    position: fixed;
+    top: 56px;
+    /* Navbar height */
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #212529;
+    color: white;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    z-index: 1030;
+    overflow-y: auto;
+}
+
+.admin-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: calc(100vh - 56px);
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+
+    .admin-sidebar.active {
+        transform: translateX(0);
+    }
+
+    .admin-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar-toggler {
+        display: block !important;
+    }
+}
+
+.sidebar-toggler {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1031;
+    background: #343a40;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
